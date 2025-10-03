@@ -3,11 +3,18 @@ document.getElementById('loginForm').addEventListener('submit', function(e) {
   const email = document.getElementById('loginEmail').value;
   const password = document.getElementById('loginPassword').value;
 
-  const user = JSON.parse(localStorage.getItem('registeredUser'));
-  if (user && user.email === email) {
-    localStorage.setItem('loggedInUser', JSON.stringify(user));
-    window.location.href = 'dashboard.html';
-  } else {
-    document.getElementById('loginMessage').textContent = "Invalid credentials or user not registered.";
-  }
+  fetch('../backend/login.php', {
+    method: 'POST',
+    headers: {'Content-Type': 'application/x-www-form-urlencoded'},
+    body: `email=${email}&password=${password}`
+  })
+  .then(res => res.json())
+  .then(data => {
+    if (data.success) {
+      localStorage.setItem('loggedInUser', JSON.stringify(data.user));
+      window.location.href = 'dashboard.html';
+    } else {
+      document.getElementById('loginMessage').textContent = data.error || "Login failed.";
+    }
+  });
 });
