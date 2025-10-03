@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db = 'sports_app';
 $user = 'root';
-$pass = ''; // default for XAMPP
+$pass = ''; 
 $conn = new mysqli($host, $user, $pass, $db);
 
 if ($conn->connect_error) {

@@ -26,8 +26,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
   } else {
     echo json_encode(["success" => false, "error" => "User not found"]);
-  }
+  } 
 
   $stmt->close();
+} else {
+  http_response_code(405);
+  echo "Method Not Allowed";
 }
 ?>
