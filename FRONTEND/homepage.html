@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Welcome to MySport Tracker</title>
+  <link rel="stylesheet" href="homepage.css">
+</head>
+<body>
+  <div class="welcome-box">
+    <h1>🏆 MySport Tracker</h1>
+    <p>Track your workouts, monitor your progress, and stay motivated. Whether you're running, cycling, hitting the gym, or playing football — we've got you covered.</p>
+    <button onclick="goToRegister()">Register</button>
+    <button onclick="goToLogin()">Login</button>
+    <p id="statusMessage"></p>
+  </div>
+
+  <script>
+    function goToRegister() {
+      window.location.href = 'register.html';
+    }
+
+    function goToLogin() {
+      window.location.href = 'login.html';
+    }
+
+    // Optional: Check if user is already registered (mock logic)
+    const isRegistered = localStorage.getItem('registeredUser');
+    const statusMessage = document.getElementById('statusMessage');
+    if (!isRegistered) {
+      statusMessage.textContent = "New here? Please register to get started.";
+    } else {
+      statusMessage.textContent = "Welcome back! You can log in to continue.";
+    }
+  </script>
+</body>
+</html>

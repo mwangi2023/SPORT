@@ -1,0 +1,36 @@
+body {
+      background: url('images/sports-bg.jpg') no-repeat center center/cover;
+      color: white;
+      text-align: center;
+      padding: 50px;
+      font-family: Arial, sans-serif;
+    }
+    .welcome-box {
+      background: rgba(0, 0, 0, 0.6);
+      padding: 2rem;
+      border-radius: 12px;
+      max-width: 600px;
+      margin: auto;
+    }
+    .welcome-box h1 {
+      font-size: 36px;
+      margin-bottom: 20px;
+    }
+    .welcome-box p {
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+    .welcome-box button {
+      padding: 12px 24px;
+      font-size: 16px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      background-color: #ff9800;
+      color: white;
+      font-weight: bold;
+      margin: 10px;
+    }
+    .welcome-box button:hover {
+      background-color: #e68900;
+    }
