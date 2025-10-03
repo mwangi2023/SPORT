@@ -1,4 +1,6 @@
-<?php
+ <?php
+ // connect.php
+include 'db.php';
     $fullName = $_POST['Full Name'];
     $email = $_POST['Email'];
     $password = $_POST['Password'];
